@@ -27,6 +27,13 @@
             <li><a href="#about">About Us</a></li>
             <li><a href="#contact" class="nav-btn">Start Project</a></li>
         </ul>
+        
+        <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+       </div>
+        
     </nav>
 
     <header id="home" class="hero">
@@ -245,5 +252,16 @@
         function closeModal(id) { document.getElementById(id).style.display = 'none'; }
         window.onclick = function(e) { if(e.target.className === 'modal') e.target.style.display = "none"; }
     </script>
+
+     <script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+    
 </body>
+
 </html>

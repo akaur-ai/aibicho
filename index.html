@@ -253,15 +253,23 @@
         window.onclick = function(e) { if(e.target.className === 'modal') e.target.style.display = "none"; }
     </script>
 
-     <script>
+  <script>
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links li a');  // all menu links
 
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+});
+
+navItems.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');  // hide menu after clicking a link
+    });
 });
 </script>
     
 </body>
 
 </html>
+

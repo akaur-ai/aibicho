@@ -39,6 +39,26 @@ section {
 .nav-links a:hover { color:var(--orange); }
 .nav-btn { border:1px solid var(--orange); padding:8px 20px; border-radius:5px; color:var(--orange)!important; }
 
+/* Hamburger menu default (hidden on desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+    .hamburger { display: flex; }
+}
+
+
 
 
 /* Hero Section Fixes */
@@ -175,4 +195,21 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); outline
     .btn-outline { margin-left: 0; margin-top: 10px; }
     .about-flex, .form-row, .partner-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
+
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;  /* float above content */
+        top: 100%;           /* right below navbar */
+        right: 0;
+        background-color: rgba(10,10,11,0.95);
+        width: 100%;
+        flex-direction: column;
+        display: none;       /* hide by default */
+        text-align: center;
+        padding: 20px 0;
+    }
+    .nav-links.active { display: flex; }
+    .nav-links li { margin: 15px 0; }
 }
